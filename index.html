@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学位查询</title>
+    <style>
+        .image-container {
+            text-align: center;
+            margin-bottom: 5px; /* 调整此值以增加或减少图片和文字之间的间距 */
+        }
+
+        .image-container img {
+            /*max-width: 100%; !* 图片最大宽度为容器宽度 *!*/
+            /*height: auto; !* 保持图片比例 *!*/
+            height: 80px;
+            width: auto;
+        }
+        .warning-box {
+            background-color: #fdeede; /* 浅橘色背景 */
+            color: #FF8C00; /* 深橘色字体 */
+            padding: 1px; /* 内边距 */
+            margin-bottom: 1px; /* 底部外边距 */
+            font-size: 12px;
+        }
+        .report-section {
+            display: flex;
+            align-items: center;
+        }
+        .red-text {
+            color: red;
+            margin-right: 5px; /* 与后面的文字间隔5px */
+        }
+        .gray-text {
+            color: gray;
+            margin-right: 10px; /* 与按钮间隔一些空间 */
+        }
+
+        .button-container {
+            display: flex; /* 使用flex来水平居中按钮 */
+            justify-content: center;
+            align-items: center;
+            background-color: #0ebaf1; /* 浅蓝色背景 */
+            height: 45px; /* 根据需要调整高度 */
+            width: 100%; /* 确保行宽度占据整个页面宽度 */
+
+        }
+        .blue-button {
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 15px;
+            color: white; /* 白色字体 */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #0ebaf1; /* 浅蓝色背景 #add8e6 */
+
+            /* 不需要设置背景色，因为它会继承自.button-row */
+        }
+
+
+        .select-container {
+            margin-bottom: 10px;
+        }
+
+        .caption {
+            text-align: center; /* 文字居中显示 */
+        }
+        .report-details {
+            display: none; /* 初始时隐藏报告详情 */
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="school.png" alt="Your Image"> <!-- 替换为您的图片URL -->
+        <p class="caption">广东财经大学学位查询系统</p> <!-- 替换为您想要的文字 -->
+    </div>
+
+    <div class="content">
+        <div class="warning-box"> <!-- 新增的浅橘色背景容器 -->
+            <p>温馨提示</p>
+            <p>学位信息更新速度较快，请以最终实际已报名人数为准。</p>
+        </div>
+
+        <div class="select-container">
+            <label for="subject-select"><span class="red-text">*</span>选择报读的专业:</label>
+            <select id="subject-select" onchange="updateReportDetails()">
+                <option value="99">请选择</option>
+                <option value="01">市场营销</option>
+                <option value="02">电子商务</option>
+                <option value="03">人力资源管理</option>
+                <option value="04">物流管理</option>
+                <option value="05">行政管理</option>
+                <option value="06">财务管理</option>
+                <option value="07">会计学</option>
+                <option value="08">商务英语</option>
+                <option value="09">视觉传达设计</option>
+                <option value="10">环境设计</option>
+                <option value="11">数字媒体艺术</option>
+                <option value="12">播音与主持艺术</option>
+                <option value="13">法学</option>
+                <option value="14">金融学</option>
+                <option value="15">投资学</option>
+                <option value="16">国际经济与贸易</option>
+                <option value="17">工商管理</option>
+                <option value="18">文化产业管理</option>
+                <option value="19">计算机科学与技术</option>
+
+            </select>
+        </div>
+
+        <div class="report-details" style="display: none;">
+            <p>计划招生数: <span id="planned-count">0</span></p>
+            <p>已报名人数: <span id="registered-count">0</span></p>
+        </div>
+        <div>
+            <p> </p>
+            <p> </p>
+        </div>
+<!--        <button class="blue-button">立即查询</button>-->
+        <div class="button-container">
+            <button class="blue-button">立即查询</button>
+        </div>
+
+    </div>
+    <script>
+    function updateReportDetails() {
+        // 获取下拉列表选中的值
+        var selectedSubject = document.getElementById('subject-select').value;
+
+        // 根据选中的值设置计划招生数和已报名人数
+        var plannedCount, registeredCount;
+        switch (selectedSubject) {
+            case '01':
+                plannedCount = 50;
+                registeredCount = 50-7;
+                break;
+            case '02':
+                plannedCount = 50;
+                registeredCount = 50-8;
+                break;
+            case '03':
+                plannedCount = 50;
+                registeredCount = 50-2;
+                break;
+            case '04':
+                plannedCount = 50;
+                registeredCount = 50-4;
+                break;
+            case '05':
+                plannedCount = 50;
+                registeredCount = 50-4;
+                break;
+            case '06':
+                plannedCount = 50;
+                registeredCount = 50-6;
+                break;
+            case '07':
+                plannedCount = 50;
+                registeredCount = 50-4;
+                break;
+            case '08':
+                plannedCount = 50;
+                registeredCount = 50-3;
+                break;
+            case '09':
+                plannedCount = 50;
+                registeredCount = 50-9;
+                break;
+            case '10':
+                plannedCount = 50;
+                registeredCount = 50-3;
+                break;
+            case '11':
+                plannedCount = 50;
+                registeredCount = 50-5;
+                break;
+            case '12':
+                plannedCount = 50;
+                registeredCount = 50-7;
+                break;
+            case '13':
+                plannedCount = 50;
+                registeredCount = 50-4;
+                break;
+            case '14':
+                plannedCount = 50;
+                registeredCount = 50-8;
+                break;
+            case '15':
+                plannedCount = 50;
+                registeredCount = 50-6;
+                break;
+            case '16':
+                plannedCount = 50;
+                registeredCount = 50-7;
+                break;
+            case '17':
+                plannedCount = 50;
+                registeredCount = 50-5;
+                break;
+            case '18':
+                plannedCount = 50;
+                registeredCount = 50-4;
+                break;
+            case '19':
+                plannedCount = 50;
+                registeredCount = 50-7;
+                break;
+            default:
+                plannedCount = 0;
+                registeredCount = 0;
+        }
+
+        // 更新页面上的显示
+        document.getElementById('planned-count').textContent = plannedCount;
+        document.getElementById('registered-count').textContent = registeredCount;
+
+        // 显示报告详情
+        document.querySelector('.report-details').style.display = 'block';
+    }
+
+    </script>
+</body>
+</html>
