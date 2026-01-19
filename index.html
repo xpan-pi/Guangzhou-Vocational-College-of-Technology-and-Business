@@ -87,26 +87,15 @@
             <label for="subject-select"><span class="red-text">*</span>选择报读的专业:</label>
             <select id="subject-select" onchange="updateReportDetails()">
                 <option value="99">请选择</option>
-                <option value="01">市场营销</option>
-                <option value="02">电子商务</option>
-                <option value="03">人力资源管理</option>
-                <option value="04">物流管理</option>
-                <option value="05">行政管理</option>
-                <option value="06">财务管理</option>
-                <option value="07">会计学</option>
-                <option value="08">商务英语</option>
-                <option value="09">视觉传达设计</option>
-                <option value="10">环境设计</option>
-                <option value="11">数字媒体艺术</option>
-                <option value="12">播音与主持艺术</option>
-                <option value="13">法学</option>
-                <option value="14">金融学</option>
-                <option value="15">投资学</option>
-                <option value="16">国际经济与贸易</option>
-                <option value="17">工商管理</option>
-                <option value="18">文化产业管理</option>
-                <option value="19">计算机科学与技术</option>
-
+                <option value="01">国际经济与贸易</option>
+                <option value="02">跨境电子商务</option>
+                <option value="03">商务英语</option>
+                <option value="04">电子商务</option>
+                <option value="05">农村电子商务</option>
+                <option value="06">市场营销</option>
+                <option value="07">计算机网络技术</option>
+                <option value="08">电气自动化</option>
+                <option value="09">工业机器人</option>
             </select>
         </div>
 
@@ -133,80 +122,40 @@
         var plannedCount, registeredCount;
         switch (selectedSubject) {
             case '01':
-                plannedCount = 50;
-                registeredCount = 50-7;
+                plannedCount = 15;
+                registeredCount = 15-2;
                 break;
             case '02':
-                plannedCount = 50;
-                registeredCount = 50-8;
+                plannedCount = 60;
+                registeredCount = 60-5;
                 break;
             case '03':
-                plannedCount = 50;
-                registeredCount = 50-2;
+                plannedCount = 45;
+                registeredCount = 45-3;
                 break;
             case '04':
-                plannedCount = 50;
-                registeredCount = 50-4;
+                plannedCount = 20;
+                registeredCount = 20-4;
                 break;
             case '05':
-                plannedCount = 50;
-                registeredCount = 50-4;
+                plannedCount = 20;
+                registeredCount = 20-3;
                 break;
             case '06':
-                plannedCount = 50;
-                registeredCount = 50-6;
+                plannedCount = 15;
+                registeredCount = 15-2;
                 break;
             case '07':
-                plannedCount = 50;
-                registeredCount = 50-4;
+                plannedCount = 25;
+                registeredCount = 25-4;
                 break;
             case '08':
-                plannedCount = 50;
-                registeredCount = 50-3;
+                plannedCount = 25;
+                registeredCount = 25-3;
                 break;
             case '09':
-                plannedCount = 50;
-                registeredCount = 50-9;
-                break;
-            case '10':
-                plannedCount = 50;
-                registeredCount = 50-3;
-                break;
-            case '11':
-                plannedCount = 50;
-                registeredCount = 50-5;
-                break;
-            case '12':
-                plannedCount = 50;
-                registeredCount = 50-7;
-                break;
-            case '13':
-                plannedCount = 50;
-                registeredCount = 50-4;
-                break;
-            case '14':
-                plannedCount = 50;
-                registeredCount = 50-8;
-                break;
-            case '15':
-                plannedCount = 50;
-                registeredCount = 50-6;
-                break;
-            case '16':
-                plannedCount = 50;
-                registeredCount = 50-7;
-                break;
-            case '17':
-                plannedCount = 50;
-                registeredCount = 50-5;
-                break;
-            case '18':
-                plannedCount = 50;
-                registeredCount = 50-4;
-                break;
-            case '19':
-                plannedCount = 50;
-                registeredCount = 50-7;
+                plannedCount = 20;
+                registeredCount = 20-3;
                 break;
             default:
                 plannedCount = 0;
